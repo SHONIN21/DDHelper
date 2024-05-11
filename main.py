@@ -10,6 +10,10 @@ import os
 import tempfile
 import shutil
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 # load_dotenv()  # 環境変数を読み込む
 # OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # 環境変数からAPIキーを読み込む
